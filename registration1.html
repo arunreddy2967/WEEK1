@@ -1,33 +1,89 @@
-      
 <!DOCTYPE html>
+<html>
 <head>
     <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 25px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input:focus, select:focus {
+            border-color: #4a6cff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4a6cff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #354edb;
+        }
+    </style>
 </head>
 <body>
-<h2>Event Registration Form</h2>
+
 <form>
-    <label>Full Name:</label><br>
-    <input type="text" name="fullname" required><br><br>
-//registration form for an event
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+    <h2>Event Registration Form</h2>
 
-    <label>Phone Number:</label><br>
-    <input type="tel" name="phone"required><br><br>
+    <label>Full Name:</label>
+    <input type="text" name="fullname" required>
 
-    <label>Organization:</label><br>
-    <input type="text" name="organization"><br><br>
+    <label>Email:</label>
+    <input type="email" name="email" required>
 
-    <label>Participation Type:</label><br>
+    <label>Phone Number:</label>
+    <input type="tel" name="phone" required>
+
+    <label>Organization:</label>
+    <input type="text" name="organization">
+
+    <label>Participation Type:</label>
     <select name="participation">
         <option value="attendee">Attendee</option>
         <option value="speaker">Speaker</option>
         <option value="volunteer">Volunteer</option>
-    </select><br><br>
+    </select>
 
     <input type="submit" value="Register">
 </form>
 
 </body>
 </html>
-
