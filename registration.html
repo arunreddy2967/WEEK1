@@ -1,11 +1,43 @@
-
 <!DOCTYPE html>
+<html>
 <head>
     <title>Event Registration Form</title>
+    <script>
+        function validateForm() {
+            let name = document.forms["regForm"]["fullname"].value.trim();
+            let email = document.forms["regForm"]["email"].value.trim();
+            let phone = document.forms["regForm"]["phone"].value.trim();
+
+            // Name validation (letters and spaces only)
+            let namePattern = /^[A-Za-z ]+$/;
+            if (!namePattern.test(name)) {
+                alert("Please enter a valid full name (letters only).");
+                return false;
+            }
+
+            // Email validation
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Phone validation (10 digits)
+            let phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            return true; // Allow submission
+        }
+    </script>
 </head>
 <body>
+
 <h2>Event Registration Form</h2>
-<form>
+
+<form name="regForm" onsubmit="return validateForm()">
     <label>Full Name:</label><br>
     <input type="text" name="fullname" required><br><br>
 
@@ -13,14 +45,15 @@
     <input type="email" name="email" required><br><br>
 
     <label>Phone Number:</label><br>
-    <input type="tel" name="phone"required><br><br>
+    <input type="tel" name="phone" required><br><br>
 
     <label>Organization:</label><br>
     <input type="text" name="organization"><br><br>
 
     <label>Participation Type:</label><br>
-    <select name="participation">
-        <option value="teacher">Attendee</option>
+    <select name="participation" required>
+        <option value="">--Select--</option>
+        <option value="attendee">Attendee</option>
         <option value="speaker">Speaker</option>
         <option value="volunteer">Volunteer</option>
     </select><br><br>
@@ -30,3 +63,6 @@
 
 </body>
 </html>
+
+
+
